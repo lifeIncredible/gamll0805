@@ -1,0 +1,29 @@
+server:
+  port: 8888
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: pms-route
+          uri: lb://pms-server
+          predicates:
+            - Path=/pms/**
+        - id: wms-route
+          uri: lb://wms-server
+          predicates:
+            - Path=/wms/**
+        - id: sms-route
+          uri: lb://sms-server
+          predicates:
+            - Path=/sms/**
+        - id: oms-route
+          uri: lb://oms-server
+          predicates:
+            - Path=/oms/**
+        - id: ums-route
+          uri: lb://ums-server
+          predicates:
+            - Path=/ums/**
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
