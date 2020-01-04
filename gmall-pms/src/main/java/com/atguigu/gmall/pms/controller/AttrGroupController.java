@@ -7,6 +7,7 @@ import java.util.Map;
 import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.core.bean.Resp;
+import com.atguigu.gmall.pms.vo.GroupVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,32 @@ import com.atguigu.gmall.pms.service.AttrGroupService;
 public class AttrGroupController {
     @Autowired
     private AttrGroupService attrGroupService;
+
+
+    /**
+     *  请求路径：http://127.0.0.1:8888/pms/attr?type=1&cid=225
+     */
+    @GetMapping("{catId}")
+    public Resp<PageVo> list(QueryCondition queryCondition,@PathVariable("catId") Long catId){
+        PageVo page = attrGroupService.querGroupByCidPage(queryCondition,catId);
+        return  Resp.ok(page);
+    }
+
+    /**
+     * http://127.0.0.1:8888/pms/attrgroup/withattr/1
+     * 查询组下的规格参数(属性组关联)
+     * @param gid
+     * @return
+     */
+    @GetMapping("/withattr/{gid}")
+    public Resp<GroupVo> queryGroupVoByGid(@PathVariable("gid") Long gid){
+      GroupVo groupVo = attrGroupService.queryGroupVoByGid(gid);
+        return Resp.ok(groupVo);
+    }
+
+
+
+
 
     /**
      * 列表

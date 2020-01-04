@@ -1,5 +1,9 @@
 package com.atguigu.gmall.pms.service.impl;
 
+import com.atguigu.gmall.pms.dao.AttrAttrgroupRelationDao;
+import com.atguigu.gmall.pms.entity.AttrAttrgroupRelationEntity;
+import com.atguigu.gmall.pms.vo.AttrVo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -17,6 +21,9 @@ import com.atguigu.gmall.pms.service.AttrService;
 @Service("attrService")
 public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements AttrService {
 
+    @Autowired
+    private AttrAttrgroupRelationDao relationDao;
+
     @Override
     public PageVo queryPage(QueryCondition params) {
         IPage<AttrEntity> page = this.page(
@@ -25,6 +32,44 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
         );
 
         return new PageVo(page);
+    }
+
+    /**
+     * 商品管理中：
+     *      属性维护：
+     *             基本属性和销售属性查询
+     * @param queryCondition
+     * @param cid
+     * @param type
+     * @return
+     */
+    @Override
+    public PageVo queryAttrByCidOrTypePage(QueryCondition queryCondition, Long cid, Integer type) {
+        QueryWrapper<AttrEntity> wrapper = new QueryWrapper<>();
+        //判断type是否为null
+        if (type != null){
+            wrapper.eq("attr_type",type);
+        }
+        wrapper.eq("catelog_id",cid);
+        IPage<AttrEntity> page = this.page(
+                new Query<AttrEntity>().getPage(queryCondition),
+                wrapper
+        );
+
+        return new PageVo(page);
+    }
+
+    @Override
+    public void saveAttrVo(AttrVo attrVo) {
+        //新增attr
+        this.save(attrVo);
+        Long attrId = attrVo.getAttrId();
+
+        //新增relation
+        AttrAttrgroupRelationEntity relationEntity = new AttrAttrgroupRelationEntity();
+        relationEntity.setAttrGroupId(attrVo.getAttrGroupId());
+        relationEntity.setAttrId(attrId);
+        relationDao.insert(relationEntity);
     }
 
 }

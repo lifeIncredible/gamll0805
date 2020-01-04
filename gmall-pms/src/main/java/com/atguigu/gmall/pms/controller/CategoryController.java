@@ -1,6 +1,7 @@
 package com.atguigu.gmall.pms.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 
@@ -32,6 +33,22 @@ import com.atguigu.gmall.pms.service.CategoryService;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
+
+
+    /*
+        以http://127.0.0.1:8888/pms/category?t=1578049177866&level=0 方式传值所以 用@requestparam接收
+     */
+    @GetMapping
+    public  Resp<List<CategoryEntity>> queryCategoriesByLevelOrPid(
+            @RequestParam(value = "level",defaultValue = "0")Integer level
+            ,@RequestParam(value = "parentCid",required = false)Long parentCid) {
+            List<CategoryEntity> categoryEntities  =categoryService.queryCategoriesByLevelOrPid(level,parentCid);
+
+            return  Resp.ok(categoryEntities);
+    }
+
+
+
 
     /**
      * 列表
