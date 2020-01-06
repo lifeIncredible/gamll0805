@@ -1,6 +1,7 @@
 package com.atguigu.gmall.pms.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 
@@ -34,6 +35,11 @@ public class AttrGroupController {
     @Autowired
     private AttrGroupService attrGroupService;
 
+    @GetMapping("withattrs/cat/{catId}")
+    public  Resp<List<GroupVo>> queryGroupVoByCid(@PathVariable("catId")long cid){
+       List<GroupVo>  groupVos = attrGroupService.queryGroupVoByCid(cid);
+       return  Resp.ok(groupVos);
+    }
 
     /**
      *  请求路径：http://127.0.0.1:8888/pms/attr?type=1&cid=225
