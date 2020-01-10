@@ -2,13 +2,16 @@ package com.atguigu.gmall.pms.controller;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
+
 
 
 import com.atguigu.core.bean.PageVo;
+import com.atguigu.core.bean.Query;
 import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.core.bean.Resp;
 import com.atguigu.gmall.pms.vo.SpuInfoVo;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +44,19 @@ public class SpuInfoController {
       PageVo pageVo = this.spuInfoService.querySpuInfo(condition,catId);
         return  Resp.ok(pageVo);
     }
+
+    /**
+     * 此方法用于进行分页查询数据，并被gmall-search的Feign调用向ElasticSearch搜索引擎传递数据
+     * 因为Feign调用不能接收复杂对象，所以用JSON方式接收数据,请求方式改为Post
+     * @param condition
+     * @return
+     */
+    @PostMapping("page")
+    public Resp<List<SpuInfoEntity>> querySpuByPage(@RequestBody QueryCondition condition){
+    IPage<SpuInfoEntity> page = spuInfoService.page(new Query<SpuInfoEntity>().getPage(condition),new QueryWrapper<SpuInfoEntity>().eq("publish_status","1"));
+        return Resp.ok(page.getRecords());
+    }
+
 
 
     /**

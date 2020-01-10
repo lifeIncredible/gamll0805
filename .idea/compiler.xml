@@ -12,10 +12,13 @@
         <module name="gmall-core" />
         <module name="gmall-oms" />
         <module name="gmall-gateway" />
+        <module name="gmall-pms-interface" />
         <module name="gmall-generator" />
+        <module name="gmall-search" />
         <module name="gmall-sms-interface" />
-        <module name="gmall-pms" />
         <module name="gmall-admin" />
+        <module name="gmall-wms-interface" />
+        <module name="gmall-pms" />
       </profile>
     </annotationProcessing>
   </component>
@@ -26,6 +29,7 @@
       <module name="gmall-generator" options="-parameters" />
       <module name="gmall-oms" options="-parameters" />
       <module name="gmall-pms" options="-parameters" />
+      <module name="gmall-search" options="-parameters" />
       <module name="gmall-sms" options="-parameters" />
       <module name="gmall-ums" options="-parameters" />
       <module name="gmall-wms" options="-parameters" />
