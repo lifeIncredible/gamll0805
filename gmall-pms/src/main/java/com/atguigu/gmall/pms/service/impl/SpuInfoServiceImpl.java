@@ -11,6 +11,7 @@ import com.atguigu.gmall.pms.vo.SpuInfoVo;
 import com.atguigu.gmall.sms.vo.SaleVo;
 import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,7 +42,6 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
     @Autowired
     private ProductAttrValueService attrValueService;
 
-
     @Autowired
     private SkuInfoDao skuInfoDao;
 
@@ -57,7 +57,8 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
     @Autowired
     private SpuInfoDescService spuInfoDescService;
 
-
+    @Autowired
+    private AmqpTemplate amqpTemplate;
 
     @Override
     public PageVo queryPage(QueryCondition params) {
@@ -111,8 +112,14 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
         // 2. sku相关信息
         saveSkuAndSales(spuInfoVO, spuId);
 
-
+        sendMsg(spuId,"insert");
     }
+
+    //抽取成方法Ctrl+Alt+M
+    private void sendMsg(Long spuId,String type) {
+        this.amqpTemplate.convertAndSend("GMALL-PMS-EXCHANGE","item." + type,spuId);
+    }
+
 
     private void saveSkuAndSales(SpuInfoVo spuInfoVO, Long spuId) {
         List<SkuInfoVo> skus = spuInfoVO.getSkus();
@@ -168,6 +175,7 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
             this.smsClient.saveSales(saleVo);
         });
     }
+
 
     private void saveBaseAttrsValue(SpuInfoVo spuInfoVO, Long spuId) {
         List<BaseAttrValueVo> baseAttrs = spuInfoVO.getBaseAttrs();

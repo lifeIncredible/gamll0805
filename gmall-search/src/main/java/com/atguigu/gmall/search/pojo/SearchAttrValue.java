@@ -8,11 +8,11 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 public class SearchAttrValue {
 
     @Field(type = FieldType.Long)
-    private Long attId;
+    private Long attrId;
 
     @Field(type = FieldType.Keyword)
     private String attrName;
 
     @Field(type = FieldType.Keyword)
-    private String attValue;
+    private String attrValue;
 }

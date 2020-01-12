@@ -8,6 +8,7 @@ import java.util.Map;
 import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.core.bean.Resp;
+import com.atguigu.gmall.pms.vo.CategoryVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 import com.atguigu.gmall.pms.entity.CategoryEntity;
 import com.atguigu.gmall.pms.service.CategoryService;
-
-
 
 
 /**
@@ -34,20 +33,22 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-
+    @GetMapping("{pid}")
+    public  Resp<List<CategoryVO>> queryCategoriesWithSup(@PathVariable("pid") Long pid){
+        List<CategoryVO> categoryVOS = this.categoryService.queryCategoriesWithSup(pid);
+        return  Resp.ok(categoryVOS);
+    }
     /*
         以http://127.0.0.1:8888/pms/category?t=1578049177866&level=0 方式传值所以 用@requestparam接收
      */
     @GetMapping
-    public  Resp<List<CategoryEntity>> queryCategoriesByLevelOrPid(
-            @RequestParam(value = "level",defaultValue = "0")Integer level
-            ,@RequestParam(value = "parentCid",required = false)Long parentCid) {
-            List<CategoryEntity> categoryEntities  =categoryService.queryCategoriesByLevelOrPid(level,parentCid);
+    public Resp<List<CategoryEntity>> queryCategoriesByLevelOrPid(
+            @RequestParam(value = "level", defaultValue = "0") Integer level
+            , @RequestParam(value = "parentCid", required = false) Long parentCid) {
+        List<CategoryEntity> categoryEntities = categoryService.queryCategoriesByLevelOrPid(level, parentCid);
 
-            return  Resp.ok(categoryEntities);
+        return Resp.ok(categoryEntities);
     }
-
-
 
 
     /**
@@ -69,8 +70,8 @@ public class CategoryController {
     @ApiOperation("详情查询")
     @GetMapping("/info/{catId}")
     @PreAuthorize("hasAuthority('pms:category:info')")
-    public Resp<CategoryEntity> info(@PathVariable("catId") Long catId){
-		CategoryEntity category = categoryService.getById(catId);
+    public Resp<CategoryEntity> info(@PathVariable("catId") Long catId) {
+        CategoryEntity category = categoryService.getById(catId);
 
         return Resp.ok(category);
     }
@@ -81,8 +82,8 @@ public class CategoryController {
     @ApiOperation("保存")
     @PostMapping("/save")
     @PreAuthorize("hasAuthority('pms:category:save')")
-    public Resp<Object> save(@RequestBody CategoryEntity category){
-		categoryService.save(category);
+    public Resp<Object> save(@RequestBody CategoryEntity category) {
+        categoryService.save(category);
 
         return Resp.ok(null);
     }
@@ -93,8 +94,8 @@ public class CategoryController {
     @ApiOperation("修改")
     @PostMapping("/update")
     @PreAuthorize("hasAuthority('pms:category:update')")
-    public Resp<Object> update(@RequestBody CategoryEntity category){
-		categoryService.updateById(category);
+    public Resp<Object> update(@RequestBody CategoryEntity category) {
+        categoryService.updateById(category);
 
         return Resp.ok(null);
     }
@@ -105,8 +106,8 @@ public class CategoryController {
     @ApiOperation("删除")
     @PostMapping("/delete")
     @PreAuthorize("hasAuthority('pms:category:delete')")
-    public Resp<Object> delete(@RequestBody Long[] catIds){
-		categoryService.removeByIds(Arrays.asList(catIds));
+    public Resp<Object> delete(@RequestBody Long[] catIds) {
+        categoryService.removeByIds(Arrays.asList(catIds));
 
         return Resp.ok(null);
     }

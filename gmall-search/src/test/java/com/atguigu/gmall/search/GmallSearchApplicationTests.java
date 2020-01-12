@@ -45,7 +45,7 @@ class GmallSearchApplicationTests {
     }
 
     @Test
-    void  importDataTest(){
+    void importDataTest() {
         Long pageNum = 1L;
         Long pageSize = 100L;
 
@@ -59,76 +59,73 @@ class GmallSearchApplicationTests {
 
             //判断spu是否为空
             List<SpuInfoEntity> spuInfoEntities = listResp.getData();
-            if (CollectionUtils.isEmpty(spuInfoEntities)){
+            if (CollectionUtils.isEmpty(spuInfoEntities)) {
                 return;
             }
 
             //遍历SPU，获取SKU导入ElasticSearch
             spuInfoEntities.forEach(spuInfoEntity -> {
-                 Resp<List<SkuInfoEntity>> skuResp = this.gmallPmsClient.querySkuBySpuId(spuInfoEntity.getId());
-                 List<SkuInfoEntity> skuInfoEntities = skuResp.getData();
-                 if (!CollectionUtils.isEmpty(skuInfoEntities)){
-                     List<Goods> goodsList = skuInfoEntities.stream().map(skuInfoEntity -> {
-                         Goods goods = new Goods();
+                Resp<List<SkuInfoEntity>> skuResp = this.gmallPmsClient.querySkuBySpuId(spuInfoEntity.getId());
+                List<SkuInfoEntity> skuInfoEntities = skuResp.getData();
+                if (!CollectionUtils.isEmpty(skuInfoEntities)) {
+                    List<Goods> goodsList = skuInfoEntities.stream().map(skuInfoEntity -> {
+                        Goods goods = new Goods();
 
-                         //查询库存信息
-                         Resp<List<WareSkuEntity>> wareSkuResp = this.wmsClient.queryWareSkuBySkuId(skuInfoEntity.getSkuId());
-                         List<WareSkuEntity> wareSkuEntities = wareSkuResp.getData();
-                         if (!CollectionUtils.isEmpty(wareSkuEntities)){
-                             goods.setStore(wareSkuEntities.stream().anyMatch(wareSkuEntity -> wareSkuEntity.getStock()>0));
-                         }
-                         goods.setSkuId(skuInfoEntity.getSkuId());
-                         goods.setSale(10L);
-                         goods.setPrice(skuInfoEntity.getPrice().doubleValue());
-                         goods.setCreateTime(spuInfoEntity.getCreateTime());
+                        //查询库存信息
+                        Resp<List<WareSkuEntity>> wareSkuResp = this.wmsClient.queryWareSkuBySkuId(skuInfoEntity.getSkuId());
+                        List<WareSkuEntity> wareSkuEntities = wareSkuResp.getData();
+                        if (!CollectionUtils.isEmpty(wareSkuEntities)) {
+                            goods.setStore(wareSkuEntities.stream().anyMatch(wareSkuEntity -> wareSkuEntity.getStock() > 0));
+                        }
+                        goods.setSkuId(skuInfoEntity.getSkuId());
+                        goods.setSale(10L);
+                        goods.setPrice(skuInfoEntity.getPrice().doubleValue());
+                        goods.setCreateTime(spuInfoEntity.getCreateTime());
 
-                         //通过BrandId 查询分类信息为goods.setCategoryName(null);赋值
-                         Resp<CategoryEntity> categoryEntityResp = this.gmallPmsClient.queryGategoryById(skuInfoEntity.getBrandId());
-                         CategoryEntity categoryEntity = categoryEntityResp.getData();
-                         if (categoryEntity!=null){
-                             goods.setCategoryId(skuInfoEntity.getCatalogId());
-                             goods.setCategoryName(categoryEntity.getName());
-                         }
+                        //通过BrandId 查询分类信息为goods.setCategoryName(null);赋值
+                        Resp<CategoryEntity> categoryEntityResp = this.gmallPmsClient.queryGategoryById(skuInfoEntity.getBrandId());
+                        CategoryEntity categoryEntity = categoryEntityResp.getData();
+                        if (categoryEntity != null) {
+                            goods.setCategoryId(skuInfoEntity.getCatalogId());
+                            goods.setCategoryName(categoryEntity.getName());
+                        }
 
-                         //通过品牌Id查询品牌信息，为goods.setBrandName(null);赋值
-                         Resp<BrandEntity> brandEntityResp = this.gmallPmsClient.queryBrandById(skuInfoEntity.getBrandId());
-                         BrandEntity brandEntity = brandEntityResp.getData();
-                         if (brandEntity != null){
-                             goods.setBrandId(skuInfoEntity.getBrandId());
-                             goods.setBrandName(brandEntity.getName());
-                         }
-
-
-                         //通过spu的id 查询出销售属性
-                         Resp<List<ProductAttrValueEntity>> attrValueResp = this.gmallPmsClient.querySearchAttrValue(spuInfoEntity.getId());
-                         List<ProductAttrValueEntity> attrValueEntities = attrValueResp.getData();
-                         List<SearchAttrValue> searchAttrValues = attrValueEntities.stream().map(attrValueEntity -> {
-                             SearchAttrValue searchAttrValue = new SearchAttrValue();
-                             searchAttrValue.setAttId(attrValueEntity.getId());
-                             searchAttrValue.setAttrName(attrValueEntity.getAttrName());
-                             searchAttrValue.setAttValue(attrValueEntity.getAttrValue());
-                             return searchAttrValue;
-                         }).collect(Collectors.toList());
+                        //通过品牌Id查询品牌信息，为goods.setBrandName(null);赋值
+                        Resp<BrandEntity> brandEntityResp = this.gmallPmsClient.queryBrandById(skuInfoEntity.getBrandId());
+                        BrandEntity brandEntity = brandEntityResp.getData();
+                        if (brandEntity != null) {
+                            goods.setBrandId(skuInfoEntity.getBrandId());
+                            goods.setBrandName(brandEntity.getName());
+                        }
 
 
-                         goods.setAttrs(searchAttrValues);
-                         goods.setDefaultImage(skuInfoEntity.getSkuDefaultImg());
-                         goods.setSkuTitle(skuInfoEntity.getSkuTitle());
-                         goods.setSkuSubTitle(skuInfoEntity.getSkuSubtitle());
+                        //通过spu的id 查询出销售属性
+                        Resp<List<ProductAttrValueEntity>> attrValueResp = this.gmallPmsClient.querySearchAttrValue(spuInfoEntity.getId());
+                        List<ProductAttrValueEntity> attrValueEntities = attrValueResp.getData();
+                        List<SearchAttrValue> searchAttrValues = attrValueEntities.stream().map(attrValueEntity -> {
+                            SearchAttrValue searchAttrValue = new SearchAttrValue();
+                            searchAttrValue.setAttrId(attrValueEntity.getId());
+                            searchAttrValue.setAttrName(attrValueEntity.getAttrName());
+                            searchAttrValue.setAttrValue(attrValueEntity.getAttrValue());
+                            return searchAttrValue;
+                        }).collect(Collectors.toList());
 
-                         return goods;
-                     }).collect(Collectors.toList());
-                     this.goodsRepository.saveAll(goodsList);
-                 }
+
+                        goods.setAttrs(searchAttrValues);
+                        goods.setDefaultImage(skuInfoEntity.getSkuDefaultImg());
+                        goods.setSkuTitle(skuInfoEntity.getSkuTitle());
+                        goods.setSkuSubTitle(skuInfoEntity.getSkuSubtitle());
+
+                        return goods;
+                    }).collect(Collectors.toList());
+                    this.goodsRepository.saveAll(goodsList);
+                }
             });
 
 
-            pageSize = (long)spuInfoEntities.size();
+            pageSize = (long) spuInfoEntities.size();
             pageNum++;
-        }while (pageSize==100);
-
-
-
+        } while (pageSize == 100);
 
 
     }
