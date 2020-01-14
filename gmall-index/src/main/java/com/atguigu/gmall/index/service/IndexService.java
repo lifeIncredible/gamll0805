@@ -1,6 +1,5 @@
 package com.atguigu.gmall.index.service;
 
-import com.atguigu.core.bean.Resp;
 import com.atguigu.gmall.pms.entity.CategoryEntity;
 import com.atguigu.gmall.pms.vo.CategoryVO;
 
@@ -11,4 +10,8 @@ public interface IndexService {
 
 
     List<CategoryVO> queryCategoriesWithSub(Long pid);
+
+    void testLock();
+
+    void testDsLock();
 }

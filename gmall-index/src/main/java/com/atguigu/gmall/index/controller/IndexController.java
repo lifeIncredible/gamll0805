@@ -33,4 +33,23 @@ public class IndexController {
      return Resp.ok(categoryVOs);
     }
 
+    /**
+     * 测试本地锁
+     * @return
+     */
+    @GetMapping("test/lock")
+    public  Resp<Object> testLock(){
+        this.indexService.testLock();
+        return Resp.ok(null);
+    }
+
+    /**
+     * 测试分布式锁
+     * @return
+     */
+    @GetMapping("test/Dslock")
+    public  Resp<Object> Dslock(){
+        this.indexService.testDsLock();
+        return Resp.ok(null);
+    }
 }

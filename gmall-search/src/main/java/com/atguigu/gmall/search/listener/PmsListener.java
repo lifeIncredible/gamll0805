@@ -8,7 +8,6 @@ import com.atguigu.gmall.search.pojo.Goods;
 import com.atguigu.gmall.search.pojo.SearchAttrValue;
 import com.atguigu.gmall.search.repository.GoodsRepository;
 import com.atguigu.gmall.wms.entity.WareSkuEntity;
-import lombok.extern.apachecommons.CommonsLog;
 import org.springframework.amqp.core.ExchangeTypes;
 import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;

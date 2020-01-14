@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f71468be-7b28-4e58-9290-67a1684655cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-pms-interface/src/main/java/com/atguigu/gmall/pms/api/GmallPmsApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-pms-interface/src/main/java/com/atguigu/gmall/pms/api/GmallPmsApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-pms/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-pms/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/dao/CategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/dao/CategoryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/service/impl/SpuInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/service/impl/SpuInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-pms/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-pms/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-pms/src/main/resources/mapper/pms/CategoryDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-pms/src/main/resources/mapper/pms/CategoryDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-search/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-search/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/pojo/SearchAttrValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/pojo/SearchAttrValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-search/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-search/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmall-search/src/test/java/com/atguigu/gmall/search/GmallSearchApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-search/src/test/java/com/atguigu/gmall/search/GmallSearchApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/config/GmallCatcheAcpect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-index/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-index/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/service/IndexService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/service/IndexService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/service/impl/IndexServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/service/impl/IndexServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/listener/PmsListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/listener/PmsListener.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/gmall-admin/target/" />
@@ -41,6 +32,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_DATA_SOURCES" value="true" />
@@ -59,62 +53,13 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/service/impl/SpuInfoServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="119" column="84" lean-forward="true" selection-start-line="119" selection-start-column="84" selection-end-line="119" selection-end-column="84" />
-              <folding>
-                <element signature="method#queryPage#0;class#SpuInfoServiceImpl#0" />
-                <element signature="method#querySpuInfo#0;class#SpuInfoServiceImpl#0" />
-                <element signature="method#saveSkuAndSales#0;class#SpuInfoServiceImpl#0" />
-                <element signature="method#saveBaseAttrsValue#0;class#SpuInfoServiceImpl#0" />
-                <element signature="method#saveSpuInfo#0;class#SpuInfoServiceImpl#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/listener/PmsListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="35" column="45" lean-forward="true" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gmall-search/src/test/java/com/atguigu/gmall/search/GmallSearchApplicationTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="47" column="27" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/service/impl/SearchServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-350">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -125,9 +70,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gmall-sms/src/main/resources/bootstrap.yml" />
-        <option value="$PROJECT_DIR$/gmall-search/src/main/resources/bootstrap.yml" />
-        <option value="$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/GmallSearchApplication.java" />
         <option value="$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/config/ElasticSearchConfig.java" />
         <option value="$PROJECT_DIR$/gmall-pms-interface/pom.xml" />
         <option value="$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/feign/GmallPmsClient.java" />
@@ -155,27 +97,30 @@
         <option value="$PROJECT_DIR$/gmall-pms/pom.xml" />
         <option value="$PROJECT_DIR$/gmall-pms/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/gmall-search/pom.xml" />
-        <option value="$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/listener/PmsListener.java" />
         <option value="$PROJECT_DIR$/gmall-search/src/test/java/com/atguigu/gmall/search/GmallSearchApplicationTests.java" />
         <option value="$PROJECT_DIR$/gmall-index/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/gmall-index/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/GmallIndexApplication.java" />
-        <option value="$PROJECT_DIR$/gmall-index/pom.xml" />
         <option value="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/feign/GmallPmsClient.java" />
         <option value="$PROJECT_DIR$/gmall-gateway/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/gmall-pms-interface/src/main/java/com/atguigu/gmall/pms/vo/CategoryVO.java" />
-        <option value="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/controller/IndexController.java" />
-        <option value="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/service/IndexService.java" />
         <option value="$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/controller/CategoryController.java" />
         <option value="$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/service/CategoryService.java" />
         <option value="$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/service/impl/CategoryServiceImpl.java" />
         <option value="$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/dao/CategoryDao.java" />
         <option value="$PROJECT_DIR$/gmall-pms-interface/src/main/java/com/atguigu/gmall/pms/api/GmallPmsApi.java" />
-        <option value="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/service/impl/IndexServiceImpl.java" />
         <option value="$PROJECT_DIR$/gmall-pms/src/main/resources/mapper/pms/CategoryDao.xml" />
         <option value="$PROJECT_DIR$/gmall-search/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/service/impl/SpuInfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/service/impl/SearchServiceImpl.java" />
+        <option value="$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/listener/PmsListener.java" />
+        <option value="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/config/RedissonConfig.java" />
+        <option value="$PROJECT_DIR$/gmall-index/pom.xml" />
+        <option value="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/controller/IndexController.java" />
+        <option value="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/service/IndexService.java" />
+        <option value="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/service/impl/IndexServiceImpl.java" />
+        <option value="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/config/GmallCache.java" />
+        <option value="$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/config/GmallCatcheAcpect.java" />
       </list>
     </option>
   </component>
@@ -199,11 +144,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="-98" />
-    <option name="y" value="165" />
-    <option name="width" value="1943" />
-    <option name="height" value="850" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="517" />
+    <option name="y" value="38" />
+    <option name="width" value="1475" />
+    <option name="height" value="914" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -211,6 +156,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -221,70 +167,25 @@
             <path>
               <item name="gmall0805" type="b2602c69:ProjectViewProjectNode" />
               <item name="gamll0805" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-pms" type="462c0819:PsiDirectoryNode" />
+              <item name="gmall-index" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gmall0805" type="b2602c69:ProjectViewProjectNode" />
               <item name="gamll0805" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-pms" type="462c0819:PsiDirectoryNode" />
+              <item name="gmall-index" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gmall0805" type="b2602c69:ProjectViewProjectNode" />
               <item name="gamll0805" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-pms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gmall0805" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gamll0805" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-pms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gmall0805" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gamll0805" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-pms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gmall0805" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gamll0805" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-pms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pms" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gmall0805" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gamll0805" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-search" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gmall0805" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gamll0805" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-search" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gmall0805" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gamll0805" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-search" type="462c0819:PsiDirectoryNode" />
+              <item name="gmall-index" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gmall0805" type="b2602c69:ProjectViewProjectNode" />
               <item name="gamll0805" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-search" type="462c0819:PsiDirectoryNode" />
+              <item name="gmall-index" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -292,60 +193,31 @@
             <path>
               <item name="gmall0805" type="b2602c69:ProjectViewProjectNode" />
               <item name="gamll0805" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-search" type="462c0819:PsiDirectoryNode" />
+              <item name="gmall-index" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="search" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gmall0805" type="b2602c69:ProjectViewProjectNode" />
               <item name="gamll0805" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-search" type="462c0819:PsiDirectoryNode" />
+              <item name="gmall-index" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="search" type="462c0819:PsiDirectoryNode" />
-              <item name="listener" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gmall0805" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gamll0805" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-search" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="search" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gmall0805" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gamll0805" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-search" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="search" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gmall0805" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gamll0805" type="462c0819:PsiDirectoryNode" />
-              <item name="gmall-search" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -361,18 +233,14 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Idea\gamll0805\gmall-pms\src\main\resources" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.atguigu.gmall.sms" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Idea\gamll0805\gmall-index\src\main\resources" />
-      <recent name="E:\Idea\gamll0805\gmall-search\src\main\java\com\atguigu\gmall\search\pojo" />
-      <recent name="E:\Idea\gamll0805\gmall-pms-interface\src\main\java\com\atguigu\gmall\pms\entity" />
-      <recent name="E:\Idea\gamll0805\gmall-search\src\main\resources" />
-      <recent name="E:\Idea\gamll0805\gmall-sms\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.atguigu.gmall.search.feign" />
@@ -381,8 +249,12 @@
       <recent name="com.atguigu.gmall.pms.config" />
       <recent name="com.atguigu.gmall.pms.vo" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Idea\gamll0805\gmall-pms\src\main\resources" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Idea\gamll0805\gmall-index\src\main\resources" />
+      <recent name="E:\Idea\gamll0805\gmall-search\src\main\java\com\atguigu\gmall\search\pojo" />
+      <recent name="E:\Idea\gamll0805\gmall-pms-interface\src\main\java\com\atguigu\gmall\pms\entity" />
+      <recent name="E:\Idea\gamll0805\gmall-search\src\main\resources" />
+      <recent name="E:\Idea\gamll0805\gmall-sms\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -401,7 +273,7 @@
         </RuleState>
       </list>
     </option>
-    <option name="contentProportion" value="0.21185286" />
+    <option name="contentProportion" value="0.23866348" />
   </component>
   <component name="RunManager" selected="JUnit.GmallSearchApplicationTests.importDataTest">
     <configuration name="GmallSearchApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -475,6 +347,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GmallIndexApplication 2" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gmall-index" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.atguigu.gmall.index.GmallIndexApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <envs>
+        <env name="--server.port" value="8088" />
+      </envs>
+      <method v="2" />
+    </configuration>
+    <configuration name="GmallIndexApplication 3" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gmall-index" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.atguigu.gmall.index.GmallIndexApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <envs>
+        <env name="server.port" value="8089" />
+      </envs>
+      <method v="2" />
+    </configuration>
     <configuration name="GmallIndexApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="gmall-index" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.atguigu.gmall.index.GmallIndexApplication" />
@@ -545,6 +435,8 @@
       <item itemvalue="Spring Boot.RenrenApplication" />
       <item itemvalue="Spring Boot.GmallSearchApplication" />
       <item itemvalue="Spring Boot.GmallIndexApplication" />
+      <item itemvalue="Spring Boot.GmallIndexApplication 2" />
+      <item itemvalue="Spring Boot.GmallIndexApplication 3" />
     </list>
     <recent_temporary>
       <list>
@@ -596,7 +488,10 @@
       <workItem from="1578702414991" duration="4719000" />
       <workItem from="1578799681850" duration="19730000" />
       <workItem from="1578833534107" duration="1028000" />
-      <workItem from="1578836010747" duration="7147000" />
+      <workItem from="1578836010747" duration="7595000" />
+      <workItem from="1578875475331" duration="19633000" />
+      <workItem from="1578931005115" duration="1963000" />
+      <workItem from="1578962070508" duration="234000" />
     </task>
     <servers />
   </component>
@@ -621,12 +516,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144263000" />
+    <option name="totallyTimeSpent" value="166541000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-78" y="132" width="1554" height="680" extended-state="1" />
+    <frame x="246" y="58" width="1180" height="731" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49828178" visible="true" weight="0.22593583" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49828178" weight="0.22441779" />
       <window_info id="Structure" order="1" sideWeight="0.5017182" side_tool="true" weight="0.025510205" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -640,26 +535,26 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.44347826" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.44343066" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5008503" side_tool="true" weight="0.5" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32784432" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32934132" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.38797814" />
-      <window_info anchor="bottom" id="Run Dashboard" order="15" sideWeight="0.49914965" weight="0.74270076" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.38564274" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" sideWeight="0.49914965" visible="true" weight="0.68113524" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.35743633" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.25585756" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.35672516" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.28238133" />
       <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Database" order="5" weight="0.32931727" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.328877" />
       <window_info anchor="right" id="Jms Messenger" order="7" weight="0.32920793" />
       <window_info anchor="right" id="Bean Validation" order="8" weight="0.32949877" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49828178" visible="true" weight="0.28397375" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49828178" weight="0.22441779" />
       <window_info id="Structure" order="1" sideWeight="0.5017182" side_tool="true" weight="0.025510205" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -667,24 +562,24 @@
       <window_info id="Web" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298351" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.45565218" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.45437956" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.44347826" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.44343066" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5008503" side_tool="true" weight="0.5" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32784432" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32934132" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.38797814" />
-      <window_info anchor="bottom" id="Run Dashboard" order="15" sideWeight="0.49914965" weight="0.7431694" />
+      <window_info active="true" anchor="bottom" id="Messages" order="14" visible="true" weight="0.38564274" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" sideWeight="0.49914965" weight="0.68113524" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.35743633" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.25585756" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.35672516" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.28238133" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Database" order="5" weight="0.32931727" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
@@ -696,75 +591,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://E:/atguigu_190805_crowdfunding/repository/org/elasticsearch/elasticsearch/6.8.5/elasticsearch-6.8.5.jar!/org/elasticsearch/search/builder/SearchSourceBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="126" column="61" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="61" />
-          <folding>
-            <element signature="e#7786#7787#0" expanded="true" />
-            <element signature="e#7834#7835#0" expanded="true" />
-            <element signature="e#7884#7885#0" expanded="true" />
-            <element signature="e#7929#7930#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/atguigu_190805_crowdfunding/repository/org/elasticsearch/elasticsearch/6.8.5/elasticsearch-6.8.5.jar!/org/elasticsearch/index/query/QueryBuilders.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="127" column="27" selection-start-line="127" selection-start-column="27" selection-end-line="127" selection-end-column="27" />
-          <folding>
-            <element signature="e#4404#4405#0" expanded="true" />
-            <element signature="e#4449#4450#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/atguigu_190805_crowdfunding/repository/org/elasticsearch/elasticsearch/6.8.5/elasticsearch-6.8.5.jar!/org/elasticsearch/index/query/BoolQueryBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="93" column="32" lean-forward="true" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
-          <folding>
-            <element signature="e#4022#4023#0" expanded="true" />
-            <element signature="e#4061#4062#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-gateway/src/main/java/com/atguigu/gmallgate/way/config/CorsConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/pojo/Goods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="57" column="39" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/pojo/SearchAttrValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/atguigu_190805_crowdfunding/repository/org/elasticsearch/client/elasticsearch-rest-high-level-client/6.8.5/elasticsearch-rest-high-level-client-6.8.5.jar!/org/elasticsearch/client/RestHighLevelClient.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -900,13 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-index/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gmall-core/src/main/java/com/atguigu/core/bean/Resp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -935,13 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="14" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/service/IndexService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -1007,26 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/service/impl/IndexServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="31" column="79" lean-forward="true" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/controller/SearchController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -1054,30 +846,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/listener/PmsListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="35" column="45" lean-forward="true" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/service/SearchService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="72" lean-forward="true" selection-start-line="9" selection-start-column="72" selection-end-line="9" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-search/src/test/java/com/atguigu/gmall/search/GmallSearchApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="47" column="27" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1091,17 +863,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/service/impl/SearchServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-350">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gmall-pms/src/main/java/com/atguigu/gmall/pms/service/impl/SpuInfoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="119" column="84" lean-forward="true" selection-start-line="119" selection-start-column="84" selection-end-line="119" selection-end-column="84" />
+        <state relative-caret-position="85">
+          <caret line="119" column="84" selection-start-line="119" selection-start-column="84" selection-end-line="119" selection-end-column="84" />
           <folding>
             <element signature="method#queryPage#0;class#SpuInfoServiceImpl#0" />
             <element signature="method#querySpuInfo#0;class#SpuInfoServiceImpl#0" />
@@ -1109,6 +874,116 @@
             <element signature="method#saveBaseAttrsValue#0;class#SpuInfoServiceImpl#0" />
             <element signature="method#saveSpuInfo#0;class#SpuInfoServiceImpl#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-search/src/test/java/com/atguigu/gmall/search/GmallSearchApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/service/impl/SearchServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-search/src/main/java/com/atguigu/gmall/search/listener/PmsListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1291">
+          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-index/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/config/RedissonConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/service/IndexService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/atguigu_190805_crowdfunding/repository/org/springframework/spring-tx/5.2.2.RELEASE/spring-tx-5.2.2.RELEASE-sources.jar!/org/springframework/transaction/annotation/Transactional.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1250">
+          <caret line="112" column="64" lean-forward="true" selection-start-line="112" selection-start-column="4" selection-end-line="112" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/atguigu_190805_crowdfunding/repository/org/aspectj/aspectjweaver/1.9.5/aspectjweaver-1.9.5-sources.jar!/org/aspectj/runtime/reflect/MethodSignatureImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/atguigu_190805_crowdfunding/repository/org/aspectj/aspectjweaver/1.9.5/aspectjweaver-1.9.5-sources.jar!/org/aspectj/lang/Signature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/atguigu_190805_crowdfunding/repository/org/aspectj/aspectjweaver/1.9.5/aspectjweaver-1.9.5-sources.jar!/org/aspectj/lang/JoinPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="78" column="7" lean-forward="true" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/config/GmallCatcheAcpect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="50" column="67" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/config/GmallCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmall-index/src/main/java/com/atguigu/gmall/index/service/impl/IndexServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1173,7 +1048,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>gmall-pms-interface</last-edited>
+          <last-edited>gmall-index</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
