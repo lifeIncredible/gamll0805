@@ -1,11 +1,10 @@
 package com.atguigu.gmall.pms.api;
 
-import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.core.bean.Resp;
 import com.atguigu.gmall.pms.entity.*;
 import com.atguigu.gmall.pms.vo.CategoryVO;
-import io.swagger.annotations.ApiOperation;
+import com.atguigu.gmall.pms.vo.ItemGroupVO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,10 +13,10 @@ import java.util.List;
 public interface GmallPmsApi {
 
     @PostMapping("pms/spuinfo/page")
-    public  Resp<List<SpuInfoEntity>> querySpuByPage(@RequestBody QueryCondition condition);
+    public Resp<List<SpuInfoEntity>> querySpuByPage(@RequestBody QueryCondition condition);
 
     @GetMapping("pms/skuinfo/{spuId}")
-    public  Resp<List<SkuInfoEntity>> querySkuBySpuId(@PathVariable("spuId")Long spuId);
+    public Resp<List<SkuInfoEntity>> querySkuBySpuId(@PathVariable("spuId") Long spuId);
 
 
     @GetMapping("pms/spuinfo/info/{id}")
@@ -36,9 +35,29 @@ public interface GmallPmsApi {
             , @RequestParam(value = "parentCid", required = false) Long parentCid);
 
     @GetMapping("pms/category/{pid}")
-    public  Resp<List<CategoryVO>> queryCategoriesWithSup(@PathVariable("pid") Long pid);
+    public Resp<List<CategoryVO>> queryCategoriesWithSup(@PathVariable("pid") Long pid);
 
 
     @GetMapping("pms/productattrvalue/{spuId}")
-    public Resp<List<ProductAttrValueEntity>> querySearchAttrValue(@PathVariable("spuId")Long spuId);
+    public Resp<List<ProductAttrValueEntity>> querySearchAttrValue(@PathVariable("spuId") Long spuId);
+
+    @GetMapping("pms/skuimages/{skuId}")
+    public Resp<List<SkuImagesEntity>> queryImagesBySkuId(@PathVariable("skuId") Long skuId);
+
+    @GetMapping("pms/spuinfodesc/info/{spuId}")
+    public Resp<SpuInfoDescEntity> queryDescBySpuId(@PathVariable("spuId") Long spuId);
+
+
+    @GetMapping("pms/attrgroup/withattrsvalues")
+    public Resp<List<ItemGroupVO>> queryItemGroupVOsByCidAndSpuId(
+            @RequestParam("cid") Long cid
+            , @RequestParam("spuId") Long spuId
+    );
+
+    @GetMapping("pms/skuinfo/info/{skuId}")
+    public Resp<SkuInfoEntity> querySkuById(@PathVariable("skuId") Long skuId);
+
+
+    @GetMapping("pms/skusaleattrvalue/{spuId}")
+    public Resp<List<SkuSaleAttrValueEntity>> querySaleAttrValueBySpuId(@PathVariable("spuId") Long spuId);
 }

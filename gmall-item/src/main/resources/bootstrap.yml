@@ -1,11 +1,11 @@
 spring:
   application:
-    name: index-server
+    name: item-server
   cloud:
     nacos:
       config:
         server-addr: 127.0.0.1:8848
-        namespace: aa309293-a07e-44a3-aec5-df068a2367f6
+        namespace: 049f97a3-2c65-4425-a08a-ca70852286c2
         group: dev
         file-extension: yml
 

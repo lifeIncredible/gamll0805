@@ -1,22 +1,18 @@
 package com.atguigu.gmall.pms.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-
 import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.core.bean.Resp;
+import com.atguigu.gmall.pms.entity.SkuSaleAttrValueEntity;
+import com.atguigu.gmall.pms.service.SkuSaleAttrValueService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import com.atguigu.gmall.pms.entity.SkuSaleAttrValueEntity;
-import com.atguigu.gmall.pms.service.SkuSaleAttrValueService;
-
-
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -32,6 +28,20 @@ import com.atguigu.gmall.pms.service.SkuSaleAttrValueService;
 public class SkuSaleAttrValueController {
     @Autowired
     private SkuSaleAttrValueService skuSaleAttrValueService;
+
+    /**
+     * 此方法用于查询商品详情展示页sku的value值
+     *
+     *  先通过sku_Info表的spu_id字段查询出sku,在通过sku_id字段去sku_sale_attr_value表查销售属性值
+     * @param spuId
+     * @return
+     */
+    @GetMapping("{spuId}")
+    public Resp<List<SkuSaleAttrValueEntity>> querySaleAttrValueBySpuId(@PathVariable("spuId") Long spuId){
+        List<SkuSaleAttrValueEntity> skuSaleAttrValueEntities = this.skuSaleAttrValueService.querySaleAttrValueBySpuId(spuId);
+        return Resp.ok(skuSaleAttrValueEntities);
+    }
+
 
     /**
      * 列表
