@@ -8,6 +8,8 @@ spring:
           uri: lb://pms-server
           predicates:
             - Path=/pms/**
+          filters:
+            - Auth
         - id: wms-route
           uri: lb://wms-server
           predicates:
@@ -33,3 +35,8 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+
+jwt:
+  token:
+    pubKeyPath: E:\Idea\rsa\rsa.pub
+    cookieName: gmall_token
