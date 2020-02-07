@@ -5,6 +5,7 @@ import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.core.bean.Resp;
 import com.atguigu.gmall.pms.entity.SkuSaleAttrValueEntity;
 import com.atguigu.gmall.pms.service.SkuSaleAttrValueService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,20 @@ import java.util.List;
 public class SkuSaleAttrValueController {
     @Autowired
     private SkuSaleAttrValueService skuSaleAttrValueService;
+
+
+    /**
+     * 此方法被购物车cart服务调用 根据skuId查询sku的销售属性
+     * @param skuId
+     * @return
+     */
+    @GetMapping("/sku/{skuId}")
+    public Resp<List<SkuSaleAttrValueEntity>> querySaleAttrValueBySkuId(@PathVariable("skuId")Long skuId){
+        List<SkuSaleAttrValueEntity> skuSaleAttrValueEntities = this.skuSaleAttrValueService.list(new QueryWrapper<SkuSaleAttrValueEntity>().eq("sku_id", skuId));
+        return Resp.ok(skuSaleAttrValueEntities);
+    }
+
+
 
     /**
      * 此方法用于查询商品详情展示页sku的value值

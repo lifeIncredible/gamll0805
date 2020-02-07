@@ -7,20 +7,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="gmall-item" />
-        <module name="gmall-sms-interface" />
         <module name="gmall-oms" />
         <module name="gmall-pms" />
+        <module name="gmall-cart" />
         <module name="gmall-sms" />
         <module name="gmall-ums" />
         <module name="gmall-wms" />
-        <module name="gmall-pms-interface" />
-        <module name="gmall-admin" />
-        <module name="gmall-wms-interface" />
         <module name="gmall-ums-interface" />
-        <module name="gmall-gateway" />
-        <module name="gmall-index" />
         <module name="gmall-generator" />
+        <module name="gmall-admin" />
         <module name="gmall-core" />
+        <module name="gmall-gateway" />
+        <module name="gmall-sms-interface" />
+        <module name="gmall-index" />
+        <module name="gmall-wms-interface" />
+        <module name="gmall-pms-interface" />
         <module name="gmall-auth" />
         <module name="gmall-search" />
       </profile>
@@ -30,6 +31,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="gmall-admin" options="-parameters" />
       <module name="gmall-auth" options="-parameters" />
+      <module name="gmall-cart" options="-parameters" />
       <module name="gmall-gateway" options="-parameters" />
       <module name="gmall-generator" options="-parameters" />
       <module name="gmall-index" options="-parameters" />

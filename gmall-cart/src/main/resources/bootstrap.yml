@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: cart-server
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 99744e01-2cae-40ad-a127-11e94611550b
+        group: dev
+        file-extension: yml
