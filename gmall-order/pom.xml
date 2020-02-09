@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.atguigu</groupId>
-    <artifactId>gmall-cart</artifactId>
+    <artifactId>gmall-order</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>gmall-cart</name>
-    <description>谷粒商城购物车系统</description>
+    <name>gmall-order</name>
+    <description>谷粒商城订单页面系统</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -20,7 +20,7 @@
     </properties>
 
     <dependencies>
-        <!--gmall-core工程-->
+        <!-- gmall-core工程-->
         <dependency>
             <groupId>com.atguigu</groupId>
             <artifactId>gmall-core</artifactId>
@@ -32,55 +32,56 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!--pms接口工程-->
+        <!-- ums用户 -->
+        <dependency>
+            <groupId>com.atguigu</groupId>
+            <artifactId>gmall-ums-interface</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!-- pms商品接口工程 -->
         <dependency>
             <groupId>com.atguigu</groupId>
             <artifactId>gmall-pms-interface</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <!--库存接口工程-->
+        <!-- wms库存接口工程 -->
         <dependency>
             <groupId>com.atguigu</groupId>
             <artifactId>gmall-wms-interface</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <!--营销接口工程-->
+        <!-- sms营销接口工程 -->
         <dependency>
             <groupId>com.atguigu</groupId>
             <artifactId>gmall-sms-interface</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <!--redis-->
+        <!-- redis -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-
+        <!-- springMVC -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-        </dependency>
-
+        <!-- feign远程调用 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
-
+        <!-- 熔断 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+        <!-- rabbitmq消息中间件 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.atguigu</groupId>
-            <artifactId>gmall-cart-interface</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -91,6 +92,12 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.atguigu</groupId>
+            <artifactId>gmall-cart-interface</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

@@ -1,0 +1,26 @@
+server:
+  port: 8092
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+  redis:
+    host: 192.168.71.129
+    port: 6379
+
+  rabbitmq:
+    host: 192.168.71.129
+    port: 5672
+    virtual-host: /xiaoxingxing
+    username: xiaoxingxing
+    password: xiaoxingxing
+
+jwt:
+  token:
+    pubKeyPath: E:\Idea\rsa\rsa.pub
+    cookieName: gmall_token
+    userKey: user-key
+    expireTime: 7776000

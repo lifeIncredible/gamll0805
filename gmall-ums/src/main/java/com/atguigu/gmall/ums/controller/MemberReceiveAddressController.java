@@ -1,22 +1,19 @@
 package com.atguigu.gmall.ums.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-
 import com.atguigu.core.bean.PageVo;
 import com.atguigu.core.bean.QueryCondition;
 import com.atguigu.core.bean.Resp;
+import com.atguigu.gmall.ums.entity.MemberReceiveAddressEntity;
+import com.atguigu.gmall.ums.service.MemberReceiveAddressService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import com.atguigu.gmall.ums.entity.MemberReceiveAddressEntity;
-import com.atguigu.gmall.ums.service.MemberReceiveAddressService;
-
-
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -92,6 +89,17 @@ public class MemberReceiveAddressController {
 		memberReceiveAddressService.removeByIds(Arrays.asList(ids));
 
         return Resp.ok(null);
+    }
+
+    /**
+     * 通过用户id查询收货地址
+     * @param userId
+     * @return
+     */
+    @GetMapping("{userId}")
+    public Resp<List<MemberReceiveAddressEntity>> queryAddressesByUserId(@PathVariable("userId")Long userId){
+        List<MemberReceiveAddressEntity> address = this.memberReceiveAddressService.list(new QueryWrapper<MemberReceiveAddressEntity>().eq("member_id", userId));
+        return Resp.ok(address);
     }
 
 }
