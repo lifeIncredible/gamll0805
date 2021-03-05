@@ -3,6 +3,7 @@ package com.atguigu.gmall.index.config;
 import java.lang.annotation.*;
 
 /**
+ * 自定义注解并在切面类中使用配置，若在其他方法位置加上该注解，切面类可通过此注解找到其方法
  * @author shkstart
  * @create 2020-01-13 21:12
  */

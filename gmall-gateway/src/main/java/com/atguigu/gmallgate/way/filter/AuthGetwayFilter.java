@@ -65,8 +65,6 @@ public class AuthGetwayFilter implements GatewayFilter {
             response.setStatusCode(HttpStatus.UNAUTHORIZED);
             return response.setComplete();
         }
-
-
         return chain.filter(exchange);
     }
 }

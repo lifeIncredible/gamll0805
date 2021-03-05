@@ -3,35 +3,46 @@ server:
 spring:
   cloud:
     gateway:
-      routes:
+      routes:  #路由
         - id: pms-route
-          uri: lb://pms-server
-          predicates:
+          uri: lb://pms-server #lb是一种协议(load banlance负载均衡)
+          predicates: #断言 请求的路径中带有 /pms/**的全部路由到 pms-server服务下
             - Path=/pms/**
-          filters:
-            - Auth
+
         - id: wms-route
           uri: lb://wms-server
           predicates:
             - Path=/wms/**
+
         - id: sms-route
           uri: lb://sms-server
           predicates:
             - Path=/sms/**
+
         - id: oms-route
           uri: lb://oms-server
           predicates:
             - Path=/oms/**
+
         - id: ums-route
           uri: lb://ums-server
           predicates:
             - Path=/ums/**
+
         - id: index-route
           uri: lb://index-server
           predicates:
             - Path=/api/index/**
           filters:
             - RewritePath=/api(?<segment>/?.*), $\{segment}
+
+        - id: order-route
+          uri: lb://order-server
+          predicates:
+            - Path=/api/order/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*),$\{segment}
+
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848

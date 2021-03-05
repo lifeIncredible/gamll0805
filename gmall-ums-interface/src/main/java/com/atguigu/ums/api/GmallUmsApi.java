@@ -15,13 +15,13 @@ import java.util.List;
  */
 public interface GmallUmsApi {
 
-    @GetMapping("/ums/member/query")
+    @GetMapping("ums/member/query")
     public Resp<MemberEntity> queryUser(@RequestParam("username")String username, @RequestParam("password")String password);
 
-    @GetMapping("/ums/memberreceiveaddress/{userId}")
+    @GetMapping("ums/memberreceiveaddress/{userId}")
     public Resp<List<MemberReceiveAddressEntity>> queryAddressesByUserId(@PathVariable("userId")Long userId);
 
 
-    @GetMapping("/ums/member/info/{id}")
+    @GetMapping("ums/member/info/{id}")
     public Resp<MemberEntity> queryMemberById(@PathVariable("id") Long id);
 }

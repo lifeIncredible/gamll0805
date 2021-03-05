@@ -19,7 +19,10 @@ public class IndexController {
     @Autowired
     private IndexService indexService;
 
-
+    /**
+     * 查询一级分类
+     * @return
+     */
     @GetMapping("cates")
     public Resp<List<CategoryEntity>> queryLvl1Categories(){
      List<CategoryEntity> categoryEntities =  indexService.queryLvl1Categories();
@@ -27,6 +30,11 @@ public class IndexController {
      return  Resp.ok(categoryEntities);
     }
 
+    /**
+     * 查询一级分类下的子级分类
+     * @param pid
+     * @return
+     */
     @GetMapping("cates/{pid}")
     public Resp<List<CategoryVO>> queryCategoriesWithSub(@PathVariable("pid")Long pid){
       List<CategoryVO>  categoryVOs=  indexService.queryCategoriesWithSub(pid);

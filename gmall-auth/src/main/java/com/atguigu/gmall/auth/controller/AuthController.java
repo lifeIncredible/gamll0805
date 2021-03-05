@@ -28,6 +28,15 @@ public class AuthController {
     @Autowired
     private JwtProperties jwtProperties;
 
+    /**
+     *
+     * 登录授权
+     * @param userName 用户名
+     * @param password 密码
+     * @param request  请求
+     * @param response  响应
+     * @return
+     */
     @PostMapping("accredit")
     public Resp<Object> accredit(
             @RequestParam("username")String  userName,

@@ -13,5 +13,19 @@
         <result property="stockLocked" column="stock_locked"/>
     </resultMap>
 
+    <!--锁定库存-->
+    <update id="Lock">
+        update wms_ware_sku SET stock_locked = stock_locked + #{count} WHERE id = #{wareSkuId}
+    </update>
+
+    <!--    仓库不满足订单需求锁库存失败解锁库存 -->
+    <update id="unLock">
+        update wms_ware_sku SET stock_locked = stock_locked - #{count} WHERE id = #{wareSkuId}
+    </update>
+
+    <!--验库存是否满足订单需求-->
+    <select id="check" resultMap="wareSkuMap">
+        select * from wms_ware_sku where sku_id = #{wareSkuId} and stock-stock_locked >#{count}
+    </select>
 
 </mapper>

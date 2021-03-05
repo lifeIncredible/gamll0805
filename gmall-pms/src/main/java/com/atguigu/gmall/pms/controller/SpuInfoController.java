@@ -41,7 +41,7 @@ public class SpuInfoController {
 
     @ApiOperation("spu商品信息查询")
     @GetMapping
-    public  Resp<PageVo> querySpuInfo(QueryCondition condition,@RequestParam("catId")Long catId){
+    public  Resp<PageVo> querySpuInfo(QueryCondition condition,@RequestParam(value = "catId",defaultValue = "0")Long catId){
       PageVo pageVo = this.spuInfoService.querySpuInfo(condition,catId);
         return  Resp.ok(pageVo);
     }

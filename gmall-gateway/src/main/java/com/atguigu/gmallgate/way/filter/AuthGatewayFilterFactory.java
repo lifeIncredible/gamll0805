@@ -1,6 +1,5 @@
-package com.atguigu.gmallgate.way.config;
+package com.atguigu.gmallgate.way.filter;
 
-import com.atguigu.gmallgate.way.filter.AuthGetwayFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;

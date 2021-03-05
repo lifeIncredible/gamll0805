@@ -4,7 +4,6 @@ import com.atguigu.core.bean.UserInfo;
 import com.atguigu.core.utils.CookieUtils;
 import com.atguigu.core.utils.JwtUtils;
 import com.atguigu.gmall.order.config.JwtProperties;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -18,8 +17,6 @@ import java.util.Map;
  * @author shkstart
  * @create 2020-01-24 16:47
  * 自定义拦截器用于获取登录下的userId以及未登录的userKey
- *
- *
  */
 @Component
 @EnableConfigurationProperties(JwtProperties.class)
@@ -34,7 +31,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         2.每个线程访问这种变量的时候都会创建该变量的副本，这个变量副本为线程私有
         3.ThreadLocal类型的变量一般用private static加以修饰
     */
-    private static ThreadLocal<UserInfo> THREAD_LOCAL = new ThreadLocal<>();
+    private static ThreadLocal<UserInfo> THREAD_LOCAL  = new ThreadLocal<>();
 
 
     public LoginInterceptor() {
@@ -48,19 +45,10 @@ public class LoginInterceptor implements HandlerInterceptor {
         //若登录必定有token信息
         String token = CookieUtils.getCookieValue(request, jwtProperties.getCookieName());
 
-        //不管是否有token( 是否登录)都要传过去
-        if (StringUtils.isEmpty(token)) {
-            /*把userInfo传递给后续的业务
-            * 演示了3种方案:
-            *   1.把userKey 和 userID放在request域中，通过getAttrbuite()和setAttrbuite()方法传递
-            *       缺点：controller层中每个方法都得加上HttpServletRequest参数
-            *   2.定义一个静态变量,然后通过类名.set(userInfo) 传递
-            *       缺点： 在高并发多线程环境下,会不安全有可能把不同用户的userKey和userId传递过去
-            *   3.使用ThreadLocal多线程局部变量传值
-            * */
-            THREAD_LOCAL.set(userInfo);
-            return true;
-        }
+
+       /*if (StringUtils.isEmpty(token)) {
+            return  false;
+        }*/
 
         //如果token不为空,就通过core工程的JwtUtils工具类的getInfoFromToken方法解析token信息
         try {
@@ -70,6 +58,15 @@ public class LoginInterceptor implements HandlerInterceptor {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        /*把userInfo传递给后续的业务
+         * 演示了3种方案:
+         *   1.把userKey 和 userID放在request域中，通过getAttrbuite()和setAttrbuite()方法传递
+         *       缺点：controller层中每个方法都得加上HttpServletRequest参数
+         *   2.定义一个静态变量,然后通过类名.set(userInfo) 传递
+         *       缺点： 在高并发多线程环境下,会不安全有可能把不同用户的userKey和userId传递过去
+         *   3.使用ThreadLocal多线程局部变量传值
+         * */
         //把userInfo传递给后续的业务
         THREAD_LOCAL.set(userInfo);
         return true;

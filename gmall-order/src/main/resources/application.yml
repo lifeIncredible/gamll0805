@@ -20,7 +20,7 @@ spring:
 
 jwt:
   token:
-    pubKeyPath: E:\Idea\rsa\rsa.pub
+    pubKeyPath: E:\Idea\project\rsa\rsa.pub
     cookieName: gmall_token
     userKey: user-key
     expireTime: 7776000

@@ -98,7 +98,8 @@ public class MemberReceiveAddressController {
      */
     @GetMapping("{userId}")
     public Resp<List<MemberReceiveAddressEntity>> queryAddressesByUserId(@PathVariable("userId")Long userId){
-        List<MemberReceiveAddressEntity> address = this.memberReceiveAddressService.list(new QueryWrapper<MemberReceiveAddressEntity>().eq("member_id", userId));
+        List<MemberReceiveAddressEntity> address = this.memberReceiveAddressService.list(
+                new QueryWrapper<MemberReceiveAddressEntity>().eq("member_id", userId));
         return Resp.ok(address);
     }
 

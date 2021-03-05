@@ -21,14 +21,13 @@ import java.util.concurrent.TimeUnit;
 public class IndexServiceImpl implements IndexService {
     @Autowired
     private GmallPmsClient pmsClient;
-
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
-
     @Autowired
     private RedissonClient redissonClient;
-
     private static final String KEY_PREFIX = "index:cates:";
+
+
 
     @Override
     public List<CategoryEntity> queryLvl1Categories() {
@@ -38,7 +37,9 @@ public class IndexServiceImpl implements IndexService {
         return categoryEntities;
     }
 
-    @GmallCache
+
+
+    @GmallCache(value = "index:cates:",timeout = 7200,bound = 100,name = "lock")
     @Override
     public List<CategoryVO> queryCategoriesWithSub(Long pid) {
 
@@ -47,15 +48,18 @@ public class IndexServiceImpl implements IndexService {
 
         //2.如果有直接返回
 //        if (StringUtils.isNotBlank(cateJson)) {
-//            return JSON.parseArray(cateJson, CategoryVO.class);
+//         return JSON.parseArray(cateJson, CategoryVO.class);
 //        }
 
         //加分布式锁
-        //加上锁之后把访问数据库的全部请求拦截了，pms中商品很多，不应该全部拦截，所以加上个pid，访问不同商品，就可以进入数据库
+        /*优化：加上锁之后虽然防止了缓存击穿，把访问数据库的全部请求拦截了,防止缓存击穿是大量请求访问一个缓存中没有的数据。
+                但是每个用户访问的是不同的商品，商品所属的分类id也是不同的。
+                所以请求不应该全部拦截，应该只拦截多个同时想访问某个分类下同一个商品的请求，
+                给锁的名字加个唯一标志pid，这样访问不同商品，就可以在查询不同数据库的时候只有一个请求去查。
+         */
 //        RLock lock = this.redissonClient.getLock("lock"+ pid);
 //        lock.lock();
-
-        //当有一个请求进入数据库查询之后会放入缓存，所以应该再判断缓存中有没有,返回之前应该注意释放锁
+        //当有一个请求进入数据库查询之后会放入缓存，后续请求不应该再进入数据库了，应该判断缓存中有没有,返回之前应该注意释放锁
 //        String cateJson2 = this.stringRedisTemplate.opsForValue().get(KEY_PREFIX + pid);
 //        if (StringUtils.isNotBlank(cateJson2)) {
 //            lock.unlock();
@@ -76,16 +80,10 @@ public class IndexServiceImpl implements IndexService {
 
         //5.查询数据库完成后放入缓存(加随机时间是为了防止大量的key值同时失效，大量请求同时访问数据库，造成缓存雪崩问题)
 //        this.stringRedisTemplate.opsForValue().set(KEY_PREFIX + pid, JSON.toJSONString(vos), new Random().nextInt(5), TimeUnit.DAYS);
-//
 //        lock.unlock();
 
         return vos;
     }
-
-
-
-
-
 
 
 
@@ -179,6 +177,9 @@ public class IndexServiceImpl implements IndexService {
 
 
     }
+
+
+
 
 
 }

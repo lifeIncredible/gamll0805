@@ -32,6 +32,7 @@ public class AuthServiceImpl implements AuthService {
         //1.远程调用feign接口查询用户
         Resp<MemberEntity> memberEntityResp = umsClient.queryUser(username, password);
         MemberEntity memberEntity = memberEntityResp.getData();
+
         //2. 判断用户是否为null
         if (memberEntity == null) {
             throw new UmsException("用户名或密码错误!");

@@ -38,7 +38,9 @@ public class ItemServiceImpl implements ItemService {
 
 
     /**
-     * 此方法用于谷粒商城展示商品详情页
+     * 此方法用于谷粒商城展示商品详情页。
+     * 因为调用了商品管理微服务，库存管理微服务，营销管理微服务3个微服务
+     * 来查询信息构成商品详情页数据，服务之间调用时间过长，所以加入了线程池和使用了异步编排技术
      * @param skuId
      * @return
      */
@@ -51,16 +53,16 @@ public class ItemServiceImpl implements ItemService {
         //根据sku的id查询sku
         CompletableFuture<SkuInfoEntity> skuCompletableFuture = CompletableFuture.supplyAsync(() -> {
             Resp<SkuInfoEntity> skuInfoEntityResp = pmsClient.querySkuById(skuId);
-            SkuInfoEntity skuInfoEntity = skuInfoEntityResp.getData();
-            if (skuInfoEntity == null) {
-                return null;
-            }
-            itemVO.setWeight(skuInfoEntity.getWeight());
-            itemVO.setSkuTitle(skuInfoEntity.getSkuTitle());
-            itemVO.setSkuSubTitle(skuInfoEntity.getSkuSubtitle());
-            itemVO.setPrice(skuInfoEntity.getPrice());
-            return skuInfoEntity;
-        }, threadPoolExecutor);
+        SkuInfoEntity skuInfoEntity = skuInfoEntityResp.getData();
+        if (skuInfoEntity == null) {
+            return null;
+        }
+        itemVO.setWeight(skuInfoEntity.getWeight());
+        itemVO.setSkuTitle(skuInfoEntity.getSkuTitle());
+        itemVO.setSkuSubTitle(skuInfoEntity.getSkuSubtitle());
+        itemVO.setPrice(skuInfoEntity.getPrice());
+        return skuInfoEntity;
+    }, threadPoolExecutor);
 
 
         //根据sku中的categoryId查询分类
